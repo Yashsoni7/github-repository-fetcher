@@ -1,0 +1,14 @@
+{% extends "github/base.html" %}
+{% load bootstrap4 %}
+    {% block background %}
+    <div class = "container">
+        <div style = "font-size: 200%; margin-top: 5%;">Please enter your login details:</div>
+        <div  style = "margin-top: 5%;">
+            <form method="POST" action= "{% url 'github:login' %}" > 
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" value = "Login" class = "form-control-lg">
+            </form>
+        </div>
+    </div>
+    {% endblock %}

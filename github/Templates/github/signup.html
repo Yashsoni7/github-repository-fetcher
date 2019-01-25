@@ -1,0 +1,13 @@
+{% extends "github/base.html" %}
+{% load bootstrap4 %}
+<body>
+    {% block background %}
+    <div class = "cont container-fluid">
+        <form method="POST" action ="{% url 'github:signup' %}">
+            {% csrf_token %}
+            {% bootstrap_form user %}
+            <input type="submit" class = "form-control-sm">
+        </form>
+    </div>
+    {% endblock %}
+</body>

@@ -1,0 +1,15 @@
+{% extends "github/base.html" %}
+{% load static %}
+    {% block background %}
+    <div class = "container h-100 d-flex justify-content-center">
+        <div class = "my-auto">
+            <div style = "font-size : 200%;">Github Respository Fetcher</div>
+            <div style = "font-size : 200%;">Welcome, {{ user }} </div><br>
+            <form method="POST" action = "{% url 'github:result' %}">
+                {% csrf_token %}
+                <input type="text" name = "user" placeholder="Enter your username" class = "form-control-lg">
+                <input type="submit" class = "form-control-lg">
+            </form>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Github Fetcher</title>
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" type="text/css" href = "{% static 'github/base_style.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class = "container-fluid">
+            <nav class = "navbar navbar-expand-sm">
+                <ul class = "navbar-nav nav-pills" style = "margin-left: 2%;">
+                    <li class = "mynav"><i class="fab fa-github-alt" style = "margin-top: 75%;"></i></li>
+                    <li class = "mynav nav-item"><a href = "{% url 'github:home' %}" class = "nav-link">Home</a></li>
+                    <li class = "mynav nav-item"><a href = "{% url 'github:signup' %}" class = "nav-link">Signup</a></li>
+                    <li class = "mynav nav-item"><a href = "{% url 'github:login' %}" class = "nav-link">Login</a></li>
+                </ul>
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav ml-auto">
+                    <li class = "nav-item">
+                        <form method="POST" class = "navbar-form navbar-right" action = "{% url 'github:logout' %}" >
+                            {% csrf_token %}
+                            <input type="submit" value="Logout" class = "btn btn-light" >
+                        </form>
+                    </li>
+                </ul>
+                {% endif %}
+            </nav>
+        </div>
+        {% block background %}
+        
+        {% endblock %}
+    </body>
+</html>

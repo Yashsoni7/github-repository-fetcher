@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Results</title>
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" type="css/text" href = "{% static 'results_style.css' %}">
+    </head>
+    <body>
+        <div>
+            <div>The repositories of {{ user }} are</div>
+            <table>
+                <tr>
+                    <th>Repository Name</th>
+                </tr>
+                {% for i in repo_li %}
+                <tr>
+                    <td>{{ i }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "github/base.html" %}
+{% load static %}
+{% block background %}
+    <div class="container">
+        {% if cond is True %}
+            <h3>The Repositories of user "{{ user_name }}" are :</h3>
+            <table class = "table table-responsive-lg">
+                <thead>
+                    <th>Name</th>
+                    <th>Language</th>
+                    <th>Forks</th>
+                </thead>
+                <tbody>
+                    {% for i in user_data %}
+                        <tr>
+                            <td ><a href="{{i.html_url}} " target = "_blank" class = "links">{{ i.name }}</a></td>
+                            <td ><a href="{{i.html_url}} " target = "_blank" class = "links">{{ i.language }}</a></td>
+                            <td ><a href="{{i.html_url}} " target = "_blank" class = "links">{{ i.forks_count }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div style = "font-size : 300%; ">Username "{{ user_name }}" not found or Connection Error ({{ code }})</div>
+        {% endif %}
+    </div>
+{% endblock %}
+ 

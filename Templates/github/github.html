@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Github Respository finder</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'github/style.css' %}">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+        <h1>Github Respository Finder</h1>
+        <form method="POST" action = "/github/next/">
+            {% csrf_token %}
+            <input type="text" name = "user" placeholder="Enter your username">
+            <input type="submit">
+        </form>
+    </div>
+    </body>
+</html>

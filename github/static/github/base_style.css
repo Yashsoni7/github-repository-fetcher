@@ -1,0 +1,67 @@
+body,h1
+{
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-size : cover;
+    font-family: sans-serif;
+    color:white !important;
+}
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    border : 0;
+}
+
+#logout_button
+{
+    display: inline-block;
+}
+
+th, td
+{
+    border: 1px solid white;
+}
+th
+{
+    color: #0056b3;
+}
+tbody tr:hover
+{
+    background-color : grey;
+}
+
+a
+{
+    display: block;
+    color : white !important;
+}
+.navbar
+{
+    color : white;
+}
+
+.navbar-right
+{
+    float : right;
+}
+
+.nav-item:hover
+{
+    background-color: grey;
+}
+
+.btn:hover
+{
+    background-color: grey !important;
+}
+
+.nav-item
+{
+    width : 50%;
+}
+
+.mynav
+{
+    margin-left: 15%;
+}
