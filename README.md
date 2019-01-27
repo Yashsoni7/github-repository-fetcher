@@ -1,6 +1,10 @@
-<<<<<<< HEAD
-# Github_Repos_Finder
-=======
 # Github_Repository_Fetcher
->>>>>>> 5d5a81b07cfea4c03c4180b9939d7a111060b520
 
+Dependencies required to run:
+1. Django (Version 2.1.x) ($ pip install django)
+2. Requests module ($ pip install requests)
+3. django bootstrap4 ($ pip install django-bootstrap4)
+
+How to run:
+1. Change directory to root directory of project
+2. $ python manage.py runserver
